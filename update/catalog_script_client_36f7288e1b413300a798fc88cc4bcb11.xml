@@ -18,33 +18,37 @@
         <name>Validate target table</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
-	if (isLoading || newValue == '') {
+	if (isLoading) {
 		return;
 	}
-	g_form.hideFieldMsg('u_slt_trg_table');
-	g_form.setValue('u_cb_trg_eop',false);
 
-	var instance = g_form.getValue('u_slt_trg_instance');
-	var basicauth = g_form.getValue('u_ref_trg_basicauth');
-	var rcc = g_form.getValue('u_cb_trg_rcc');	
-	var restuser = g_form.getValue('u_slt_trg_restuser');
-	var restpass = g_form.getValue('u_msk_trg_restpass');
+	if(newValue != oldValue){
+		g_form.hideFieldMsg('u_slt_trg_table');
+		g_form.setValue('u_cb_trg_eop',false);
 
-	if(basicauth == "" || rcc == "true"){
-		basicauth = "";
+		var instance = g_form.getValue('u_slt_trg_instance');
+		var basicauth = g_form.getValue('u_ref_trg_basicauth');
+		var rcc = g_form.getValue('u_cb_trg_rcc');	
+		var restuser = g_form.getValue('u_slt_trg_restuser');
+		var restpass = g_form.getValue('u_msk_trg_restpass');
+
+		if(basicauth == "" || rcc == "true"){
+			basicauth = "";
+		}
+
+		var ga = new GlideAjax('orthusUtilsAjax');
+		ga.addParam('sysparm_name', 'testTableField');
+		ga.addParam('sysparm_rest', 'Orthus REST Calls');
+		ga.addParam('sysparm_method', 'Get Table');
+		ga.addParam('sysparm_instance', instance);
+		ga.addParam('sysparm_table', newValue);
+		ga.addParam('sysparm_user', restuser);
+		ga.addParam('sysparm_pass', restpass);
+		ga.addParam('sysparm_profile', basicauth);
+
+		ga.getXML(getResponse);
+
 	}
-
-	var ga = new GlideAjax('orthusUtilsAjax');
-	ga.addParam('sysparm_name', 'testTableField');
-	ga.addParam('sysparm_rest', 'Orthus REST Calls');
-	ga.addParam('sysparm_method', 'Get Table');
-	ga.addParam('sysparm_instance', instance);
-	ga.addParam('sysparm_table', newValue);
-	ga.addParam('sysparm_user', restuser);
-	ga.addParam('sysparm_pass', restpass);
-	ga.addParam('sysparm_profile', basicauth);
-
-	ga.getXML(getResponse);
 
 	function getResponse(response) {
 		var answer = response.responseXML.documentElement.getAttribute("answer");
@@ -64,7 +68,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>36f7288e1b413300a798fc88cc4bcb11</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Validate target table</sys_name>
         <sys_overrides/>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
@@ -72,7 +76,7 @@
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
         <sys_update_name>catalog_script_client_36f7288e1b413300a798fc88cc4bcb11</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-28 16:30:18</sys_updated_on>
+        <sys_updated_on>2019-04-28 17:38:17</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

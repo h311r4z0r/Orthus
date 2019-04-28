@@ -9,13 +9,12 @@
         <script><![CDATA[var orthusUtilsAjax = Class.create();
 orthusUtilsAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
-	getBasicAuth: function(){
-		var t = "sys_auth_profile_basic";
-		var q = this.getParameter('sysparm_query');
-		var f = this.getParameter('sysparm_field');
-		gs.info("AJAX:"+table+","+query+","+field);
-		
-		return new orthusUtils().getValue(t,q,f);
+	getValue: function(){
+		var table = this.getParameter('sysparm_table');
+		var query = this.getParameter('sysparm_query');
+		var field = this.getParameter('sysparm_field');
+
+		return new orthusUtils().getValue(table,query,field);
 	},
 	
 	testTableField: function(){
@@ -36,13 +35,13 @@ orthusUtilsAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-04-26 14:46:48</sys_created_on>
         <sys_id>854f8fa11b413300a798fc88cc4bcba4</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>orthusUtilsAjax</sys_name>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
         <sys_update_name>sys_script_include_854f8fa11b413300a798fc88cc4bcba4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-28 17:00:10</sys_updated_on>
+        <sys_updated_on>2019-04-28 17:38:39</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -8,73 +8,64 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Data Mirror">2e8583e91b013300a798fc88cc4bcb85</cat_item>
-        <cat_variable>IO:01b2d8021b413300a798fc88cc4bcbf8</cat_variable>
+        <cat_variable>IO:f978c36d1b013300a798fc88cc4bcb32</cat_variable>
         <condition/>
         <description/>
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Validate source table</name>
+        <name>Populate target basic auth</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
 	if (isLoading) {
 		return;
 	}
-
 	if(newValue != oldValue){
-		g_form.hideFieldMsg('u_slt_src_table');
-		g_form.setValue('u_cb_src_eop',false);
-
-		var instance = g_form.getValue('u_slt_src_instance');
-		var basicauth = g_form.getValue('u_ref_src_basicauth');
-		var rcc = g_form.getValue('u_cb_src_rcc');	
-		var restuser = g_form.getValue('u_slt_src_restuser');
-		var restpass = g_form.getValue('u_msk_src_restpass');
-
-		if(basicauth == "" || rcc == "true"){
-			basicauth = "";
-		}
-
-		var ga = new GlideAjax('orthusUtilsAjax');
-		ga.addParam('sysparm_name', 'testTableField');
-		ga.addParam('sysparm_rest', 'Orthus REST Calls');
-		ga.addParam('sysparm_method', 'Get Table');
-		ga.addParam('sysparm_instance', instance);
-		ga.addParam('sysparm_table', newValue);
-		ga.addParam('sysparm_user', restuser);
-		ga.addParam('sysparm_pass', restpass);
-		ga.addParam('sysparm_profile', basicauth);
-
-		ga.getXML(getResponse);
+		g_form.clearValue('u_slt_trg_table');
+		g_form.clearValue('u_slt_trg_table');
+		g_form.clearValue('u_slt_trg_restuser');
+		g_form.clearValue('u_msk_trg_restpass');
 	}
+
+	var query = 'name='+newValue;
+
+	var ga = new GlideAjax('orthusUtilsAjax');
+	ga.addParam('sysparm_name', 'getValue');
+	ga.addParam('sysparm_table', 'sys_auth_profile_basic');
+	ga.addParam('sysparm_query', query);
+	ga.addParam('sysparm_field', 'sys_id');
+
+	ga.getXML(getResponse);
 
 	function getResponse(response) {
 		var answer = response.responseXML.documentElement.getAttribute("answer");
 		if(answer){
-			answers = answer.split(',');
-			g_form.showFieldMsg('u_slt_src_table',answers[1],answers[0]);
-			if(answers[0] == "error"){
-				g_form.setValue('u_cb_src_eop',true);
-			}
+			g_form.setValue('u_ref_trg_basicauth',answer);
+			g_form.clearValue('u_cb_trg_rcc');
+		}else{
+			g_form.clearValue('u_ref_trg_basicauth');
+			g_form.clearValue('u_slt_trg_restuser');
+			g_form.clearValue('u_msk_trg_restpass');
+			g_form.clearValue('u_slt_trg_table');
 		}
-	}
+	}   
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2019-04-27 15:04:46</sys_created_on>
+        <sys_created_on>2019-04-28 17:39:41</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>9db850461b413300a798fc88cc4bcb33</sys_id>
-        <sys_mod_count>17</sys_mod_count>
-        <sys_name>Validate source table</sys_name>
+        <sys_id>c91a8ed21bcd3300a798fc88cc4bcb77</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Populate target basic auth</sys_name>
         <sys_overrides/>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
         <sys_policy/>
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
-        <sys_update_name>catalog_script_client_9db850461b413300a798fc88cc4bcb33</sys_update_name>
+        <sys_update_name>catalog_script_client_c91a8ed21bcd3300a798fc88cc4bcb77</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-28 17:36:15</sys_updated_on>
+        <sys_updated_on>2019-04-28 18:52:42</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
