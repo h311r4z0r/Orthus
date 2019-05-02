@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_8302_orthus.orthusRESTUtils</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>orthusRESTUtils</name>
+        <script><![CDATA[var orthusRESTUtils = Class.create();
+orthusRESTUtils.prototype = {
+	initialize: function() {
+	},
+
+	getCountBasicAuth: function(instance){
+		count = new x_8302_orthus.orthusUtils().getCount('basic_auth_credentials','name='+instance+'^active=true');
+		return count;
+	},
+
+	getCountAlias: function(instance){
+		count = new x_8302_orthus.orthusUtils().getCount('sys_alias','name=Orthus_'+instance);
+		return count;
+	},
+
+	getBasicAuth: function(instance,user,pass,replace){
+		if(replace == 'true'){
+			var basicid = new x_8302_orthus.orthusUtils().getValue('basic_auth_credentials','name='+instance+'^active=true','sys_id');
+			var authid = new x_8302_orthus.orthusUtils().getValue('sys_auth_profile_basic','name='+instance,'sys_id');
+			new x_8302_orthus.orthusUtils().deleteRec('basic_auth_credentials',basicid);
+			new x_8302_orthus.orthusUtils().deleteRec('sys_auth_profile_basic',authid);
+		}		
+
+		var aliasid = this.getAlias(instance);
+
+		if(parseInt(this.getCountBasicAuth(instance))==0){
+			insertBasic = {"name":instance,"user_name":user,"password":pass,"tag":aliasid};
+			new x_8302_orthus.orthusUtils().insertRec('basic_auth_credentials',insertBasic);
+			insertAuth = {"name":instance,"user_name":user,"password":pass};
+			new x_8302_orthus.orthusUtils().insertRec('sys_auth_profile_basic',insertAuth);
+		}
+
+		return new x_8302_orthus.orthusUtils().getValue('basic_auth_credentials','name='+instance,'tag');
+	},
+
+	getAlias: function(instance){
+		if(parseInt(this.getCountAlias(instance))==0){
+			insertAlias = {"name":"Orthus_"+instance,"type":"credential"};
+			var aliasid = new orthusUtils().insertRec('sys_alias',insertAlias);
+			gs.info("Inside alias"+aliasid);
+		}
+		return new x_8302_orthus.orthusUtils().getValue('sys_alias','name=Orthus_'+instance,'sys_id');
+	},
+
+	//REST Calls
+	testTableField: function(rest,method,instance,table,user,pass,profile){
+		var rm = new sn_ws.RESTMessageV2(rest,method);
+	
+		//Set authorization
+		if(profile){
+			rm.setAuthenticationProfile('basic',profile);
+		}else{
+			rm.setBasicAuth(user,pass);
+		}
+
+		rm.setStringParameter('instance',instance);
+		rm.setStringParameter('table',table);
+		var response = rm.execute();
+		var responseBody = response.getBody();
+		var statusCode = response.getStatusCode();
+		var errorMsg = response.getErrorMessage();
+
+		if(errorMsg){
+			e = "error,"+errorMsg;
+			return e;
+		}
+
+		var parser = new global.JSONParser();
+		var parsed = parser.parse(responseBody);
+
+		if(parsed.result.length == 0){
+			e = "error, No table exits with the name "+table+".";
+			return e;
+		}
+	},
+
+	//Get record count from source table
+	getTableCount: function(rest,method,instance,table,query,user,pass,profile){
+		var count = 0;		
+		var rm = new sn_ws.RESTMessageV2(rest,method);
+
+		//Set authorization
+		if(profile){
+			rm.setAuthenticationProfile('basic',profile);
+		}else{
+			rm.setBasicAuth(user,pass);
+		}
+
+		rm.setStringParameter('instance',instance);
+		rm.setStringParameter('table',table);
+		rm.setStringParameter('query',query);
+		var response = rm.execute();
+		var responseBody = response.getBody();
+		var statusCode = response.getStatusCode();
+		var errorMsg = response.getErrorMessage();
+	
+		var parser = new global.JSONParser();
+		var parsed = parser.parse(responseBody);
+
+		if(parsed.result.length > 0){
+			count = parsed.result.length;
+			return count;
+		}
+
+		return count;
+	},
+
+	type: 'orthusRESTUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-02 14:11:57</sys_created_on>
+        <sys_id>175cb56f1bc57300a798fc88cc4bcb31</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>orthusRESTUtils</sys_name>
+        <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
+        <sys_update_name>sys_script_include_175cb56f1bc57300a798fc88cc4bcb31</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-02 21:01:32</sys_updated_on>
+    </sys_script_include>
+</record_update>

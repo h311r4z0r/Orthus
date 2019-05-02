@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Mirror data between two instances - table to table inclusion of sys_id.</description>
+        <internal_name>data_mirror</internal_name>
+        <label_cache>[{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_slt_src_query","label":"1➛u_slt_src_query","reference":"","reference_display":"","type":"string","base_type":"string","column_name":""},{"name":"a51d1cf6-caa9-4d4b-84d7-8f5939aa1d6e.authsysid","label":"2.1➛authsysid","reference_display":"authsysid","type":"string","base_type":"string"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_cb_src_eop","label":"1➛u_cb_src_eop","reference":"","reference_display":"u_cb_src_eop","type":"boolean","base_type":"boolean"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_cb_trg_eop","label":"1➛u_cb_trg_eop","reference":"","reference_display":"u_cb_trg_eop","type":"boolean","base_type":"boolean"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_slt_trg_table","label":"1➛u_slt_trg_table","reference":"","reference_display":"u_slt_trg_table","type":"string","base_type":"string"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_cb_trg_sas","label":"1➛u_cb_trg_sas","reference":"","reference_display":"u_cb_trg_sas","type":"boolean","base_type":"boolean"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_msk_trg_restpass","label":"1➛u_msk_trg_restpass","reference":"","reference_display":"u_msk_trg_restpass","type":"mask_code","base_type":"mask_code"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_slt_trg_restuser","label":"1➛u_slt_trg_restuser","reference":"","reference_display":"u_slt_trg_restuser","type":"string","base_type":"string"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_cb_trg_rcc","label":"1➛u_cb_trg_rcc","reference":"","reference_display":"u_cb_trg_rcc","type":"boolean","base_type":"boolean"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_ref_trg_basicauth","label":"1➛u_ref_trg_basicauth","reference":"sys_auth_profile_basic","reference_display":"Basic Auth Configuration","type":"reference","base_type":"reference"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_slt_trg_instance","label":"1➛u_slt_trg_instance","reference":"","reference_display":"u_slt_trg_instance","type":"string","base_type":"string"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_slt_src_table","label":"1➛u_slt_src_table","reference":"","reference_display":"","type":"string","base_type":"string","column_name":""},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_ref_src_basicauth","label":"1➛u_ref_src_basicauth","reference":"sys_auth_profile_basic","reference_display":"Basic Auth Configuration","type":"reference","base_type":"reference"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_slt_src_instance","label":"1➛u_slt_src_instance","reference":"","reference_display":"","type":"string","base_type":"string","column_name":""},{"name":"Service Catalog_1.request_item","label":"Trigger➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_cb_src_rcc","label":"1➛u_cb_src_rcc","reference":"","reference_display":"u_cb_src_rcc","type":"boolean","base_type":"boolean"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_slt_src_restuser","label":"1➛u_slt_src_restuser","reference":"","reference_display":"u_slt_src_restuser","type":"string","base_type":"string"},{"name":"96aeec14-c4ae-4e4b-8a2a-98cc6663cae3.u_msk_src_restpass","label":"1➛u_msk_src_restpass","reference":"","reference_display":"u_msk_src_restpass","type":"mask_code","base_type":"mask_code"},{"name":"f1c96511-7e8a-4d84-b708-f6ea8bb23cc7.aliasid","label":"2➛aliasid","type":"string","base_type":"string"}]</label_cache>
+        <latest_snapshot>bd699f6b1bc97300a798fc88cc4bcbf2</latest_snapshot>
+        <master_snapshot>ab71bd531b8d3300a798fc88cc4bcb76</master_snapshot>
+        <name>Data Mirror</name>
+        <outputs/>
+        <remote_trigger_id>7b71bd531b8d3300a798fc88cc4bcbd4</remote_trigger_id>
+        <run_as>system</run_as>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-04-30 18:59:42</sys_created_on>
+        <sys_id>a09fe00b1b413300a798fc88cc4bcb34</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Data Mirror</sys_name>
+        <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
+        <sys_update_name>sys_hub_flow_a09fe00b1b413300a798fc88cc4bcb34</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2019-05-02 20:38:42</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=a09fe00b1b413300a798fc88cc4bcb34"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a09fe00b1b413300a798fc88cc4bcb34"/>
+</record_update>

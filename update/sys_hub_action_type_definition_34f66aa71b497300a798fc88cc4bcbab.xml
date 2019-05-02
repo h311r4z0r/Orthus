@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Orthus">193179531b8d3300a798fc88cc4bcb40</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Obtain alias for REST call through REST basic authorization tag</description>
+        <internal_name>get_rest_alias</internal_name>
+        <label_cache>[{"name":"{{action.instance}}","label":"action➛instance","type":"action","ref":""},{"name":"{{action.username}}","label":"action➛username","type":"action","ref":""},{"name":"{{action.password}}","label":"action➛password","type":"action","ref":""},{"name":"{{action.replace}}","label":"action➛replace","type":"action","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].}}","label":"step➛Script step➛","type":"step","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].a}}","label":"step➛Script step➛a","type":"step","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].al}}","label":"step➛Script step➛al","type":"step","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].ali}}","label":"step➛Script step➛ali","type":"step","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].alia}}","label":"step➛Script step➛alia","type":"step","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].alias}}","label":"step➛Script step➛alias","type":"step","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].aliasi}}","label":"step➛Script step➛aliasi","type":"step","ref":""},{"name":"{{step[61572730-2f18-4fb9-b63a-2d201011cf45].aliasid}}","label":"step➛Script step➛aliasid","type":"step","ref":""}]</label_cache>
+        <latest_snapshot>f3a8622b1b497300a798fc88cc4bcba5</latest_snapshot>
+        <master_snapshot>51082ae71b497300a798fc88cc4bcbaf</master_snapshot>
+        <name>Get REST Alias</name>
+        <outputs/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-02 16:58:15</sys_created_on>
+        <sys_id>34f66aa71b497300a798fc88cc4bcbab</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Get REST Alias</sys_name>
+        <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_34f66aa71b497300a798fc88cc4bcbab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-02 17:05:50</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=34f66aa71b497300a798fc88cc4bcbab"/>
+    <sys_variable_value action="delete_multiple" query="document_key=34f66aa71b497300a798fc88cc4bcbab"/>
+    <sys_element_mapping action="delete_multiple" query="id=34f66aa71b497300a798fc88cc4bcbab"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>aliasid</field>
+        <id>34f66aa71b497300a798fc88cc4bcbab</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-02 17:02:53</sys_created_on>
+        <sys_id>a8082ae71b497300a798fc88cc4bcb43</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-02 17:02:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_34f66aa71b497300a798fc88cc4bcbab</table>
+        <value>{{step[61572730-2f18-4fb9-b63a-2d201011cf45].aliasid}}</value>
+    </sys_element_mapping>
+</record_update>

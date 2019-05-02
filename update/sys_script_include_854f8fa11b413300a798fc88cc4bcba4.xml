@@ -14,9 +14,9 @@ orthusUtilsAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		var query = this.getParameter('sysparm_query');
 		var field = this.getParameter('sysparm_field');
 
-		return new orthusUtils().getValue(table,query,field);
+		return new x_8302_orthus.orthusUtils().getValue(table,query,field);
 	},
-	
+
 	testTableField: function(){
 		var rest = this.getParameter('sysparm_rest');
 		var method = this.getParameter('sysparm_method');
@@ -25,8 +25,21 @@ orthusUtilsAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		var restuser = this.getParameter('sysparm_user');
 		var restpass = this.getParameter('sysparm_pass');
 		var profile = this.getParameter('sysparm_profile');
-		
-		return new orthusUtils().testTableField(rest,method,instance,table,restuser,restpass,profile);
+
+		return new x_8302_orthus.orthusRESTUtils().testTableField(rest,method,instance,table,restuser,restpass,profile);
+	},
+
+	getTableCount: function(){
+		var rest = this.getParameter('sysparm_rest');
+		var method = this.getParameter('sysparm_method');
+		var instance = this.getParameter('sysparm_instance');
+		var table = this.getParameter('sysparm_table');
+		var srcquery = this.getParameter('sysparm_srcquery');
+		var restuser = this.getParameter('sysparm_user');
+		var restpass = this.getParameter('sysparm_pass');
+		var profile = this.getParameter('sysparm_profile');
+
+		return new x_8302_orthus.orthusRESTUtils().getTableCount(rest,method,instance,table,srcquery,restuser,restpass,profile);
 	},
 
 	type: 'orthusUtilsAjax'
@@ -35,13 +48,13 @@ orthusUtilsAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-04-26 14:46:48</sys_created_on>
         <sys_id>854f8fa11b413300a798fc88cc4bcba4</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>orthusUtilsAjax</sys_name>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
         <sys_update_name>sys_script_include_854f8fa11b413300a798fc88cc4bcba4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-28 17:38:39</sys_updated_on>
+        <sys_updated_on>2019-05-02 17:53:25</sys_updated_on>
     </sys_script_include>
 </record_update>

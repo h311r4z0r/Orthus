@@ -20,7 +20,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2019-04-28 18:56:25</sys_updated_on>
         <table/>
-        <ui_policy display_value="Show target rest user and pass if replace selected">fe5b1a121b017300a798fc88cc4bcb87</ui_policy>
+        <ui_policy display_value="Make target rest user and pass mandatory if basic auth is empty">fe5b1a121b017300a798fc88cc4bcb87</ui_policy>
         <variable>u_cb_trg_sas</variable>
         <variable_set/>
         <visible>true</visible>

@@ -37,7 +37,7 @@ orthusUtils.prototype = {
 
 	//insert new record
 	insertRec: function(table,json){
-		var gr = new GlideRecord(table);
+		var gr = new global.GlideRecord(table);
 		gr.initialize();
 		for(var key in json){
 			gr.setValue(key.toString(),json[key].toString());
@@ -82,46 +82,19 @@ orthusUtils.prototype = {
 		return count;
 	},
 
-
-	//REST Calls
-	testTableField: function(rest,method,instance,table,user,pass,profile){
-		var result;
-		var rm = new sn_ws.RESTMessageV2(rest,method);
-
-		//Set authorization
-		if(profile){
-			rm.setAuthenticationProfile('basic',profile);
-		}else{
-			rm.setBasicAuth(user,pass);
-		}
-
-		rm.setStringParameter('instance',instance);
-		rm.setStringParameter('table',table);
-		var response = rm.execute();
-		var responseBody = response.getBody();
-		var statusCode = response.getStatusCode();
-		var errorMsg = response.getErrorMessage();
-
-		if(errorMsg){
-			result = "error,"+errorMsg;
-		}
-
-		return result;
-	},
-
 	type: 'orthusUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-04-26 14:45:51</sys_created_on>
         <sys_id>5a7e83a11b413300a798fc88cc4bcb5a</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>orthusUtils</sys_name>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
         <sys_update_name>sys_script_include_5a7e83a11b413300a798fc88cc4bcb5a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-28 17:05:36</sys_updated_on>
+        <sys_updated_on>2019-05-02 21:10:37</sys_updated_on>
     </sys_script_include>
 </record_update>

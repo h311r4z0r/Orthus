@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Orthus">193179531b8d3300a798fc88cc4bcb40</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>get_data_via_rest_call</internal_name>
+        <label_cache>[{"name":"{{action.aliasid}}","label":"action➛aliasid","type":"action","ref":""},{"name":"{{action.instance}}","label":"action➛instance","type":"action","ref":""},{"name":"{{action.table}}","label":"action➛table","type":"action","ref":""},{"name":"{{action.query}}","label":"action➛query","type":"action","ref":""},{"name":"{{step[d5b8be83-fe04-45b2-a085-a1b319ba4daa].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":""},{"name":"{{step[d5b8be83-fe04-45b2-a085-a1b319ba4daa].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":""},{"name":"{{step[d5b8be83-fe04-45b2-a085-a1b319ba4daa].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":""}]</label_cache>
+        <latest_snapshot>77e70f6f1b897300a798fc88cc4bcb36</latest_snapshot>
+        <master_snapshot>b28bae6b1b497300a798fc88cc4bcb97</master_snapshot>
+        <name>Get data via REST call</name>
+        <outputs/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-02 17:11:53</sys_created_on>
+        <sys_id>e41a6ee71b497300a798fc88cc4bcb92</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Get data via REST call</sys_name>
+        <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_e41a6ee71b497300a798fc88cc4bcb92</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-02 19:22:23</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=e41a6ee71b497300a798fc88cc4bcb92"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e41a6ee71b497300a798fc88cc4bcb92"/>
+    <sys_element_mapping action="delete_multiple" query="id=e41a6ee71b497300a798fc88cc4bcb92"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>errormessage</field>
+        <id>e41a6ee71b497300a798fc88cc4bcb92</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-02 19:22:16</sys_created_on>
+        <sys_id>26e7cb6f1b897300a798fc88cc4bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-02 19:22:16</sys_updated_on>
+        <table>var__m_sys_hub_action_output_e41a6ee71b497300a798fc88cc4bcb92</table>
+        <value>{{step[d5b8be83-fe04-45b2-a085-a1b319ba4daa].error_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>responsebody</field>
+        <id>e41a6ee71b497300a798fc88cc4bcb92</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-02 19:22:16</sys_created_on>
+        <sys_id>aae7cb6f1b897300a798fc88cc4bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-02 19:22:16</sys_updated_on>
+        <table>var__m_sys_hub_action_output_e41a6ee71b497300a798fc88cc4bcb92</table>
+        <value>{{step[d5b8be83-fe04-45b2-a085-a1b319ba4daa].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>statuscode</field>
+        <id>e41a6ee71b497300a798fc88cc4bcb92</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-02 19:22:16</sys_created_on>
+        <sys_id>e6e7cb6f1b897300a798fc88cc4bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-02 19:22:16</sys_updated_on>
+        <table>var__m_sys_hub_action_output_e41a6ee71b497300a798fc88cc4bcb92</table>
+        <value>{{step[d5b8be83-fe04-45b2-a085-a1b319ba4daa].status_code}}</value>
+    </sys_element_mapping>
+</record_update>

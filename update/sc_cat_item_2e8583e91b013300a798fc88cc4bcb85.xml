@@ -14,7 +14,7 @@
 <p>Information around form.</p>
 <ul style="list-style-position: inside;"><li>Instance for both source and target are specific to the ServiceNow URL (aka <a href="https://&lt;instance&gt;.service-now.com" rel="nofollow">https://&lt;instance&gt;.service-now.com</a>)</li><li>The basic authorization will be displayed if available otherwise a REST user and password is expected.</li><li>Table for both source and target are specific to the name of the existing table (aka cmdb_ci_win_server)</li></ul>]]></description>
         <entitlement_script/>
-        <flow_designer_flow/>
+        <flow_designer_flow display_value="Data Mirror">a09fe00b1b413300a798fc88cc4bcb34</flow_designer_flow>
         <group/>
         <hide_sp>false</hide_sp>
         <icon>7d3a83ed1b013300a798fc88cc4bcb30</icon>
@@ -60,14 +60,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-04-26 14:08:26</sys_created_on>
         <sys_id>2e8583e91b013300a798fc88cc4bcb85</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Data Mirror</sys_name>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
         <sys_policy/>
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
         <sys_update_name>sc_cat_item_2e8583e91b013300a798fc88cc4bcb85</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-27 14:36:40</sys_updated_on>
+        <sys_updated_on>2019-05-02 19:30:34</sys_updated_on>
         <template/>
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>

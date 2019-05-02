@@ -21,22 +21,28 @@
 	if (isLoading) {
 		return;
 	}
+	
+	if(newValue == ''){
+		g_form.clearValue('u_slt_src_trc');
+	}
 
 	if(newValue != oldValue){
 		g_form.hideFieldMsg('u_slt_src_table');
-		g_form.setValue('u_cb_src_eop',false);
+		g_form.clearValue('u_cb_src_eop');
+		g_form.setValue('u_slt_src_trc',"Loading...");
 
 		var instance = g_form.getValue('u_slt_src_instance');
 		var basicauth = g_form.getValue('u_ref_src_basicauth');
 		var rcc = g_form.getValue('u_cb_src_rcc');	
 		var restuser = g_form.getValue('u_slt_src_restuser');
 		var restpass = g_form.getValue('u_msk_src_restpass');
+		var srcquery = g_form.getValue('u_slt_src_query');
 
 		if(basicauth == "" || rcc == "true"){
 			basicauth = "";
 		}
 
-		var ga = new GlideAjax('orthusUtilsAjax');
+		var ga = new GlideAjax('x_8302_orthus.orthusUtilsAjax');
 		ga.addParam('sysparm_name', 'testTableField');
 		ga.addParam('sysparm_rest', 'Orthus REST Calls');
 		ga.addParam('sysparm_method', 'Get Table');
@@ -47,6 +53,20 @@
 		ga.addParam('sysparm_profile', basicauth);
 
 		ga.getXML(getResponse);
+
+		var gc = new GlideAjax('x_8302_orthus.orthusUtilsAjax');
+		gc.addParam('sysparm_name', 'getTableCount');
+		gc.addParam('sysparm_rest', 'Orthus REST Calls');
+		gc.addParam('sysparm_method', 'Get Record Count');
+		gc.addParam('sysparm_instance', instance);
+		gc.addParam('sysparm_table', newValue);
+		gc.addParam('sysparm_srcquery', srcquery);
+		gc.addParam('sysparm_user', restuser);
+		gc.addParam('sysparm_pass', restpass);
+		gc.addParam('sysparm_profile', basicauth);
+
+		gc.getXML(getCount);
+
 	}
 
 	function getResponse(response) {
@@ -59,6 +79,11 @@
 			}
 		}
 	}
+
+	function getCount(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		g_form.setValue('u_slt_src_trc',Math.round(answer).toString());
+	}
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -66,7 +91,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9db850461b413300a798fc88cc4bcb33</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>Validate source table</sys_name>
         <sys_overrides/>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
@@ -74,7 +99,7 @@
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
         <sys_update_name>catalog_script_client_9db850461b413300a798fc88cc4bcb33</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-28 17:36:15</sys_updated_on>
+        <sys_updated_on>2019-05-02 20:20:38</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

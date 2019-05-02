@@ -18,10 +18,11 @@
         <name>Check form prior to submission</name>
         <order/>
         <script><![CDATA[function onSubmit() {
-	if(g_form.getValue('u_cb_src_eop') == "true" || g_form.getValue('u_cb_trg_eop') == "true"){
+	if(g_form.getValue('u_cb_src_eop') == 'true' || g_form.getValue('u_cb_trg_eop') == 'true'){
 		g_form.addErrorMessage("Review the form and correct any errors prior to submission.");
 		return false;
-	}  
+	}
+	return true;
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -29,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0c04fc861b813300a798fc88cc4bcbb3</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Check form prior to submission</sys_name>
         <sys_overrides/>
         <sys_package display_value="Orthus" source="x_8302_orthus">512403691b013300a798fc88cc4bcbc9</sys_package>
@@ -37,7 +38,7 @@
         <sys_scope display_value="Orthus">512403691b013300a798fc88cc4bcbc9</sys_scope>
         <sys_update_name>catalog_script_client_0c04fc861b813300a798fc88cc4bcbb3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-28 17:45:17</sys_updated_on>
+        <sys_updated_on>2019-05-02 19:49:24</sys_updated_on>
         <table/>
         <type>onSubmit</type>
         <ui_type>10</ui_type>
